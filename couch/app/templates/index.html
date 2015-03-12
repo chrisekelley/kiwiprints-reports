@@ -1,0 +1,146 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../css/index.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD91G21jFeq9M0jXTCmkKWjm1P1nulQx4"/>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/KiwiUtils.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <!--<ul class="nav nav-pills pull-right">-->
+            <!--<li class="active"><a href="#">Home</a></li>-->
+            <!--&lt;!&ndash;<li><a href="#">About</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#">Contact</a></li>&ndash;&gt;-->
+        <!--</ul>-->
+        <h3 class="text-muted">{{ title }}</h3>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>PatientID</th>
+                <th>Sex</th>
+                <th>Date of Birth</th>
+                <th>Surgeon</th>
+                <th>Surgery</th>
+                <th>createdAt</th>
+                <th>lastModifiedAt</th>
+                <th>Location</th>
+                <th>Post name</th>
+                <th>Lat/Long</th>
+                <th>Address</th>
+                <th>Surgery Refused L</th>
+                <th>Surgery Refused R</th>
+                <th>Epilation Cosultation L</th>
+                <th>Epilation Cosultation R</th>
+                <th>No. eyes operated</th>
+                <th>Lefteye_surgery</th>
+                <th>Lefteye_suture</th>
+                <th>Lefteye_clamp</th>
+                <th>Lefteye_complications</th>
+                <th>Righteye_surgery</th>
+                <th>Righteye_suture</th>
+                <th>Righteye_clamp</th>
+                <th>Righteye_complications</th>
+                <th>TEO L</th>
+                <th>TEO R</th>
+                <th>Azithromycin L</th>
+                <th>Azithromycin R</th>
+                <th>Recurrence of TT</th>
+                <th>complications_referred to clinic L</th>
+                <th>complications_referred to clinic R</th>
+                <th>Clinic name</th>
+                <th>Continue Monitoring</th>
+                <th>Complete</th>
+                <th>savedBy</th>
+                <th>user</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#records}}
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>{{ clientId }}</td>
+                    <td>{{ Gender }}</td>
+                    <td>{{ DOB }}</td>
+                    <td>{{ Surgeon }}</td>
+                    <td>{{ question }}</td>
+                    <td>{{ createdAt }}</td>
+                    <td>{{ lastModifiedAt }}</td>
+                    <td>{{ registrationLocation }}</td>
+                    <td>&nbsp</td>
+                    <td>
+                        {{#currentPosition}}
+                        Latitude: {{latitude}}<br/>
+                        Longitude: {{longitude}}<br/>
+                        {{/currentPosition}}
+                    </td>
+                    <td>
+                        <span id="city{{id}}"></span>
+                    </td>
+                    <td>{{ RefusedSurgeryR }}</td>
+                    <td>{{ RefusedSurgeryL }}</td>
+                    <td>{{ ProvidedEpilationConsultationL }}</td>
+                    <td>{{ ProvidedEpilationConsultationR }}</td>
+                    <td>{{#TypeofOperationL}}L{{/TypeofOperationL}}{{#TypeofOperationL}}R{{/TypeofOperationL}}</td>
+                    <td>{{ TypeofOperationL }}</td>
+                    <td>{{ SutureTypeL }}</td>
+                    <td>{{ ClampusedL }}</td>
+                    <td>
+                        {{#ExcessbleedingL}}Excess bleeding &nbsp;{{/ExcessbleedingL}}
+                        {{#MarginfragmantseveredL}}Margin fragmant severed &nbsp;{{/MarginfragmantseveredL}}
+                        {{#GlobePunctureL}}Globe Puncture &nbsp;{{/GlobePunctureL}}
+                    </td>
+                    <td>{{ TypeofOperationR }}</td>
+                    <td>{{ SutureTypeR }}</td>
+                    <td>{{ ClampusedR }}</td>
+                    <td>
+                        {{#ExcessbleedingR}}Excess bleeding &nbsp;{{/ExcessbleedingR}}
+                        {{#MarginfragmantseveredR}}Margin fragmant severed &nbsp;{{/MarginfragmantseveredR}}
+                        {{#GlobePunctureR}}Globe Puncture &nbsp;{{/GlobePunctureR}}
+                    </td>
+                    <td>{{ tetracyclineEyeOintmentL }}</td>
+                    <td>{{ tetracyclineEyeOintmentR }}</td>
+                    <td>{{ azithromycinL }}</td>
+                    <td>{{ azithromycinR }}</td>
+                    <td>&nbsp</td>
+                    <td>{{ ComplicationsReferralL }}</td>
+                    <td>{{ ComplicationsReferralR }}</td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                    <td>{{ complete }}</td>
+                    <td>{{ savedBy }}</td>
+                    <td>{{ user }}</td>
+                </tr>
+            {{/records}}
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <p>♥ from KiwiPrints
+        </p>
+    </div>
+
+</div>
+<script type="text/javascript">
+    window.onload = function(){
+        var gpsArray = [];
+        var gps =  [{{gpsCitiesString}}];
+        gpsArray.push(gps);
+        KiwiUtils.initGPS(gpsArray);
+    }
+</script>
+<script src="../../js/jquery.min.js"></script>
+</body>
+</html>
+

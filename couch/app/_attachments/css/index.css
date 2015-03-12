@@ -1,0 +1,17 @@
+.jumbotron {
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    color: inherit;
+    background-color: #fff;
+}
+table, th, td {
+    border: 1px solid black;
+}
+td, th {
+    padding: 5px 5px 5px 5px;
+}
+
+.container {
+    margin-left: 5px;
+}
+

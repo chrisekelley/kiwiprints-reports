@@ -1,0 +1,23 @@
+{
+  "name": "kiwiprints-reports",
+  "version": "0.0.0",
+  "homepage": "https://github.com/chrisekelley/kiwiprints-reports",
+  "authors": [
+    "Chris Kelley <chris@vetula.com>"
+  ],
+  "license": "MIT",
+  "directory": "app/_attachments/bower_components",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "scriptjs": "~2.5.7"
+  }
+}
