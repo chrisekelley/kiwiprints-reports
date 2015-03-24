@@ -13,13 +13,20 @@ module.exports = function(grunt) {
         files: ['couch/app/_attachments/bower_components/bootstrap/less/*.less'],
         tasks: ['less', 'couch']
       },
+      //coffee: {
+      //  files: ['couch/app/_attachments/**/*.coffee','couch/app/lists/**/*.coffee','couch/app/views/**/*.coffee'],
+      //  tasks: ['coffee', 'couch']
+      //},
       coffee: {
         files: ['couch/app/_attachments/**/*.coffee','couch/app/lists/**/*.coffee','couch/app/views/**/*.coffee'],
         tasks: ['coffee', 'couch']
       },
-      allJs: {
-        files: ['couch/app/_attachments/**/*.js','couch/app/lists/**/*.js','couch/app/views/**/*.js'],
-        tasks: ['couch']
+      allJsHtml: {
+        files: ['couch/app/_attachments/**/*.js','couch/app/lists/**/*.js','couch/app/views/**/*.js','couch/app/templates/**/*.html', 'couch/app/_attachments/**/*.html'],
+        tasks: ['copy','couch']
+      },
+      configFiles: {
+        files: [ 'Gruntfile.js']
       }
     },
     handlebars: {
@@ -29,6 +36,14 @@ module.exports = function(grunt) {
         },
         src: ["couch/app/_attachments/templates/**/*.handlebars"],
         dest: "couch/app/_attachments/templates/precompiled.handlebars.js"
+      }
+    },
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'couch',
+        src: '**/*.html',
+        dest: 'dist/'
       }
     },
     less: {
@@ -54,19 +69,19 @@ module.exports = function(grunt) {
         },
         expand: true,
         flatten: false,
-        cwd: ".",
+        cwd: "couch/app",
         src: ["**/*.coffee"],
-        dest: '.',
+        dest: 'dist/app',
         ext: ".js"
         //files: {
         //  'couch/app/_attachments/**/*.js': 'couch/app/_attachments/**/*.coffee' // 1:1 compile,
         //}
       }
     },
-      'couch-compile': {
+    'couch-compile': {
         app: {
           files: {
-            'tmp/reports.json': ['couch/*',  '!.coffee', '!_attachments/js/KiwiUtils.coffee']
+            'tmp/reports.json': ['dist/*',  '!.coffee', '!_attachments/js/KiwiUtils.coffee']
           }
         }
       },
@@ -77,7 +92,7 @@ module.exports = function(grunt) {
       },
       localhost: {
         files: {
-          'http://localhost:5984/grunt-couch-test': 'tmp/reports.json'
+          'http://localhost:5984/coconut-moz-2015-reports': 'tmp/reports.json'
         }
       }
     },
@@ -100,6 +115,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-couch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.registerTask('default',['couch']);
   grunt.registerTask('default',['less']);
 

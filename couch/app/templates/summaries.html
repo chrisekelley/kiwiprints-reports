@@ -1,0 +1,96 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../css/index.css">
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <!--<ul class="nav nav-pills pull-right">-->
+            <!--<li class="active"><a href="#">Home</a></li>-->
+            <!--&lt;!&ndash;<li><a href="#">About</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#">Contact</a></li>&ndash;&gt;-->
+        <!--</ul>-->
+        <h3 class="text-muted">{{ title }}</h3>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>District </th>
+                <th>Post</th>
+                <th>No. Refusals</th>
+                <th>No. consultations on epilations</th>
+                <th>No. Surgeries</th>
+                <th>No. Female</th>
+                <th>No.lateral surgeries</th>
+                <th>No.bi-lateral surgereis</th>
+                <th>No. BTRP</th>
+                <th>No. Trabut</th>
+                <th>No.Silk</th>
+                <th>No.Absorbable</th>
+                <th>No. clamp used</th>
+                <th>No. w/complications</th>
+                <th>No. given Azthromycin</th>
+                <th>No.given TEO</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ district }}</td>
+                    <td>Montepuez</td>
+                    <td>{{JanuaryRefusedSurgery}}</td>
+                    <td>{{JanuaryProvidedEpilationConsultation}}</td>
+                    <td>{{JanuarySurgeries}}</td>
+                    <td>{{JanuaryFemale}}</td>
+                    <td>{{JanuaryLateral}}</td>
+                    <td>{{JanuaryBiLateral}}</td>
+                    <td>{{JanuaryBTRP}}</td>
+                    <td>{{JanuaryTrabut}}</td>
+                    <td>{{JanuarySilk}}</td>
+                    <td>{{JanuaryAbsorbable}}</td>
+                    <td>{{JanuaryClampused}}</td>
+                    <td>{{JanuaryComplications}}</td>
+                    <td>{{JanuaryAzithromycin}}</td>
+                    <td>{{JanuarytetracyclineEyeOintment}}</td>
+
+                </tr>
+                <tr>
+                    <td>{{ district }}</td>
+                    <td>Feb.</td>
+                    <td>{{ FebruaryRefusedSurgery }}</td>
+                    <td>{{ FebruaryProvidedEpilationConsultation }}</td>
+                    <td>{{ FebruarySurgeries }}</td>
+                    <td>{{ FebruaryFemale }}</td>
+                    <td>{{ FebruaryLateral }}</td>
+                    <td>{{ FebruaryBiLateral] }}</td>
+                    <td>{{FebruaryBTRP}}</td>
+                    <td>{{FebruaryTrabut}}</td>
+                    <td>{{FebruarySilk}}</td>
+                    <td>{{FebruaryAbsorbable}}</td>
+                    <td>{{FebruaryClampused}}</td>
+                    <td>{{FebruaryComplications}}</td>
+                    <td>{{FebruaryAzithromycin}}</td>
+                    <td>{{FebruarytetracyclineEyeOintment}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <p>♥ from KiwiPrints 2015
+        </p>
+    </div>
+
+
+</div>
+<script src="../../js/jquery.min.js"></script>
+</body>
+</html>
