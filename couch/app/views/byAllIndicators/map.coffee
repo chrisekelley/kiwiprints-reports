@@ -22,17 +22,20 @@
       if (doc.ProvidedEpilationConsultationR == 'true')
         emit(monthName + 'ProvidedEpilationConsultation', 1)
 
-      if ((doc.RefusedSurgeryL == null) && (doc.RefusedSurgeryR == null))
-        emit(monthName + 'Surgeries', 1)
+#      if ((doc.RefusedSurgeryL == null) && (doc.RefusedSurgeryR == null))
+#        emit(monthName + 'Surgeries', 1)
 
       if (doc.TypeofOperationL == null && doc.TypeofOperationR != null)
         emit(monthName + 'Lateral', 1)
+        emit(monthName + 'Surgeries', 1)
 
       if (doc.TypeofOperationL != null && doc.TypeofOperationR == null)
         emit(monthName + 'Lateral', 1)
+        emit(monthName + 'Surgeries', 1)
 
       if ((doc.TypeofOperationL != null) && (doc.TypeofOperationR != null))
         emit(monthName + 'BiLateral', 1)
+        emit(monthName + 'Surgeries', 1)
 
       if (doc.TypeofOperationL == 'BTRP')
         emit(monthName + 'BTRP', 1)

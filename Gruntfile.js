@@ -50,6 +50,12 @@ module.exports = function(grunt) {
         cwd: 'couch',
         src: '**/*.js',
         dest: 'dist/'
+      },
+      css: {
+        expand: true,
+        cwd: 'couch',
+        src: '**/*.css',
+        dest: 'dist/'
       }
     },
     less: {
@@ -112,6 +118,27 @@ module.exports = function(grunt) {
           'http://localhost:5984': 'couch/replications/*.json'
         }
       }
+    },
+    bowercopy: {
+      options: {},
+      libs: {
+        options: {
+          destPrefix: 'couch/app/_attachments/js'
+        },
+        files: {
+          'jquery.js': 'jquery/dist/jquery.js',
+          'bootstrap.js': 'bootstrap/dist/js/bootstrap.js',
+        }
+      },
+      css: {
+        options: {
+          destPrefix: 'couch/app/_attachments/css'
+        },
+        files: {
+          'bootstrap.css': 'bootstrap/dist/css/bootstrap.css',
+          'bootstrap.css.map': 'bootstrap/dist/css/bootstrap.css.map',
+        }
+      }
     }
   });
 
@@ -122,6 +149,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-couch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-bowercopy');
+
   grunt.registerTask('default',['couch']);
   grunt.registerTask('default',['less']);
 

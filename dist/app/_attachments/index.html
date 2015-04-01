@@ -3,13 +3,31 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>KiwiPrints Reports</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>KiwiPrints Reports</h1>
-<ul>
-    <li><a href="/coconut-moz-2015-reports/_design/reports/_list/summaries/byAllIndicators?group=true">Summary</a></li>
-    <li><a href="/coconut-moz-2015-reports/_design/app/_list/table/byInvidAndTrichiasisJoined">All Indicators table</a></li>
-    <li><a href="/coconut-moz-2015-reports/_design/reports/_list/csv/byInvidAndTrichiasisJoined">CSV</a></li>
-</ul>
+
+<div class="container" data-role='page'>
+    <!--<div id="content" >-->
+    <div data-role='header' id="header"></div>
+    <div id="logo"><img src="images/KiwiPrints-transparent.png"/></div>
+    <!-- Fixed navbar -->
+
+    <div data-role='content' class="app jumbotron" id="content">
+        <h1>KiwiPrints Reports</h1>
+        <ul>
+            <li><a href="/coconut-moz-2015-reports/_design/reports/_list/summaries/byAllIndicators?group=true">Summary</a></li>
+            <li><a href="/coconut-moz-2015-reports/_design/app/_list/table/byInvidAndTrichiasisJoined">All Indicators table</a></li>
+            <li><a href="/coconut-moz-2015-reports/_design/reports/_list/csv/byInvidAndTrichiasisJoined">CSV</a></li>
+        </ul>
+    </div>
+    <div id='log'></div>
+    <!--<div data-role='footer'>-->
+    <!--<div class='question-buttons' id="bottom-menu"></div>-->
+    <!--<div style='padding-top:50px;padding-bottom:50px' id="footer-menu"></div>-->
+</div>
 </body>
 </html>
