@@ -44,6 +44,12 @@ module.exports = function(grunt) {
         cwd: 'couch',
         src: '**/*.html',
         dest: 'dist/'
+      },
+      js: {
+        expand: true,
+        cwd: 'couch',
+        src: '**/*.js',
+        dest: 'dist/'
       }
     },
     less: {

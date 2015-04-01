@@ -1,7 +1,0 @@
-{
-  "comment" : "COPY THIS FILE to .couchapprc and fill in the details below",
-  "env" : {
-    "default" : {"db" : "http://admin:password@localhost:5984/coconut-moz-2015-reports" },
-    "dig" : {"db" : "http://coco:blond4eva!@146.185.135.61:5984/coconut-moz-2015-reports" }
-  }
-}

@@ -3,12 +3,7 @@
   if (doc.question === 'Trichiasis Surgery') {
     if (doc.confirmed !== "false") {
       month = doc.createdAt.split(' ')[0].split('-')[1];
-      monthName = '';
-      if (month === '01') {
-        monthName = 'January';
-      } else {
-        monthName = 'February';
-      }
+      monthName = month;
       if (doc.RefusedSurgeryL === 'true') {
         emit(monthName + 'RefusedSurgery', 1);
       }
@@ -36,7 +31,7 @@
       if (doc.TypeofOperationL !== null && doc.TypeofOperationR === null) {
         emit(monthName + 'Lateral', 1);
       }
-      if (doc.TypeofOperationL !== null && doc.TypeofOperationR !== null) {
+      if ((doc.TypeofOperationL !== null) && (doc.TypeofOperationR !== null)) {
         emit(monthName + 'BiLateral', 1);
       }
       if (doc.TypeofOperationL === 'BTRP') {
@@ -107,13 +102,9 @@
   } else if (doc.question === 'Individual Registration') {
     if (doc.confirmed !== "false") {
       month = doc.createdAt.split(' ')[0].split('-')[1];
-      monthName = '';
-      if (month === '01') {
-        monthName = 'January';
-      } else {
-        monthName = 'February';
-      }
-      return emit(monthName + doc.Gender, 1);
+      monthName = month;
+      emit(monthName + doc.Gender, 1);
+      return emit(monthName + 'IndivReg', 1);
     }
   }
 });
