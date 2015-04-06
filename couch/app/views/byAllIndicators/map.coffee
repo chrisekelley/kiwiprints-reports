@@ -35,7 +35,7 @@
 
       if ((doc.TypeofOperationL != null) && (doc.TypeofOperationR != null))
         emit(monthName + 'BiLateral', 1)
-        emit(monthName + 'Surgeries', 1)
+        emit(monthName + 'Surgeries', 2)
 
       if (doc.TypeofOperationL == 'BTRP')
         emit(monthName + 'BTRP', 1)
@@ -44,7 +44,6 @@
       if (doc.TypeofOperationR == 'BTRP')
         emit(monthName + 'BTRP', 1)
         emit(monthName + 'BTRP-R', 1)
-
 
       if (doc.TypeofOperationL == 'Trabut')
         emit(monthName + 'Trabut', 1)

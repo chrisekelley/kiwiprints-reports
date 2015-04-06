@@ -32,7 +32,7 @@
       }
       if ((doc.TypeofOperationL !== null) && (doc.TypeofOperationR !== null)) {
         emit(monthName + 'BiLateral', 1);
-        emit(monthName + 'Surgeries', 1);
+        emit(monthName + 'Surgeries', 2);
       }
       if (doc.TypeofOperationL === 'BTRP') {
         emit(monthName + 'BTRP', 1);
